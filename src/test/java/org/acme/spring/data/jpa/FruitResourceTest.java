@@ -111,14 +111,6 @@ class FruitResourceTest {
                 );
     }
 
-    @Test
-    void testAddMetadata() {
-        //Find by color that no fruit has
-        given()
-                .when().put("/fruits/id/1/box")
-                .then()
-                .statusCode(200);
-    }
 
 
 }

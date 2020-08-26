@@ -49,26 +49,6 @@ public class FruitResource {
     }
 
     @PUT
-    @Path("/id/{id}/box")
-    @Produces("application/json")
-    public Fruit addMetadata(@PathParam Long id) {
-        Optional<Fruit> optional = fruitRepository.findById(id);
-        if (optional.isPresent()) {
-            Fruit fruit = optional.get();
-            HashMap<String, String> metadata = new HashMap<>();
-            metadata.put("clave1","valor1");
-            metadata.put("clave2","valor2");
-            Box box = new Box(metadata);
-            fruit.setBox(box);
-            Fruit save = fruitRepository.save(fruit);
-//            Optional<Fruit> byId = fruitRepository.findById(1L);
-            return save;
-        }
-
-        throw new IllegalArgumentException("No Fruit with id " + id + " exists");
-    }
-
-    @PUT
     @Path("/id/{id}/color/{color}")
     @Produces("application/json")
     public Fruit changeColor(@PathParam Long id, @PathParam String color) {

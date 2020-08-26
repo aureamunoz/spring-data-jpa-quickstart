@@ -15,12 +15,6 @@ public class Fruit {
 
     private String color;
 
-    public Box getBox() {
-        return box;
-    }
-
-    @Embedded
-    private Box box;
 
     public Fruit() {
     }
@@ -54,7 +48,4 @@ public class Fruit {
         this.color = color;
     }
 
-    public void setBox(Box box) {
-        this.box = box;
-    }
 }
