@@ -15,12 +15,9 @@ public class Fruit {
 
     private String color;
 
-    public Box getBox() {
-        return box;
-    }
+    @ElementCollection
+    private Map<String, String> metadata = new HashMap<>();
 
-    @Embedded
-    private Box box;
 
     public Fruit() {
     }
@@ -54,7 +51,11 @@ public class Fruit {
         this.color = color;
     }
 
-    public void setBox(Box box) {
-        this.box = box;
+    public Map<String, String> getMetadata() {
+        return metadata;
+    }
+
+    public void setMetadata(Map<String, String> metadata) {
+        this.metadata = metadata;
     }
 }

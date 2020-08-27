@@ -58,8 +58,7 @@ public class FruitResource {
             HashMap<String, String> metadata = new HashMap<>();
             metadata.put("clave1","valor1");
             metadata.put("clave2","valor2");
-            Box box = new Box(metadata);
-            fruit.setBox(box);
+            fruit.setMetadata(metadata);
             Fruit save = fruitRepository.save(fruit);
 //            Optional<Fruit> byId = fruitRepository.findById(1L);
             return save;
